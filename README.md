@@ -93,9 +93,42 @@ Once running, test these endpoints:
 
 If all endpoints work in Azure, your environment variable setup is correct!
 
+## Running Tests
+
+The project includes tests that use embedded MongoDB for testing:
+
+```bash
+# Run all tests
+mvn test
+
+# Run tests with verbose output
+mvn test -X
+```
+
+**Test Configuration:**
+
+- Uses embedded MongoDB (no external database required)
+- Tests run independently of environment variables
+- Includes health endpoint test
+
 ## MongoDB Benefits
 
 - ✅ No need for separate database hosting (using MongoDB Atlas)
 - ✅ Simplified connection string (no separate user/password variables)
 - ✅ Auto-scaling and managed service
 - ✅ Works great with Azure Web Apps
+- ✅ Tests use embedded MongoDB (no external dependencies)
+
+## Troubleshooting
+
+**Azure Build Failures:**
+
+- Make sure `MONGODB_URI` is set in Azure Application Settings
+- Tests use embedded MongoDB and should pass without external database
+- Check that Java 21 is configured in Azure
+
+**Local Testing Issues:**
+
+- Ensure MongoDB Atlas connection string is correct
+- Check network connectivity to MongoDB Atlas
+- Verify that the database name exists or can be created
