@@ -19,7 +19,30 @@ The application expects these environment variables:
 
 ## Local Testing
 
-### Option 1: Using the provided scripts
+### Option 1: Using Environment Files (Recommended)
+
+1. **Setup environment variables:**
+
+   ```bash
+   # Copy the example file
+   cp .env.example .env
+
+   # Edit .env with your values (already configured with your MongoDB Atlas connection)
+   ```
+
+2. **Run with environment loader:**
+
+   ```bash
+   # Windows
+   run-with-env.bat
+
+   # Linux/Mac
+   ./run-with-env.sh
+   ```
+
+📖 **See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed setup instructions**
+
+### Option 2: Using the legacy scripts
 
 **Windows:**
 
